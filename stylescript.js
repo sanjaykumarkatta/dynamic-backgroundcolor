@@ -1,7 +1,7 @@
 /**
  * Created by sanjaykumarkatta on 3/1/17.
  */
-var randomColor, uniqueColors = [ ],i = 0;
+var randomColor, uniqueColors = [],i = 0;
 function changeBackground() {
 
         randomColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
