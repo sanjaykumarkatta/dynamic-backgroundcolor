@@ -1,17 +1,22 @@
 /**
  * Created by sanjaykumarkatta on 3/1/17.
  */
-var randomColor=[], uniqueColor=[];
+var randomColor, uniqueColors = [ ],i = 0;
 function changeBackground() {
-        randomColor = ['rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'];
-        randomColor.forEach(function(value){
-                if(uniqueColor.indexOf(value)==-1){
-                        uniqueColor.push(value);
-                        document.body.style.background = randomColor;
 
+        randomColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+        if(uniqueColors.indexOf(randomColor)===-1){
+                document.body.style.background = randomColor;
+                document.body.style.WebkitTransition = "all 500ms linear";
+                uniqueColors.push(randomColor);
+                i++;
+                console.log(i);
+                if(i>=10){
+                        clearInterval(timer);
                 }
-                else changeBackground();
-        });
+        }
+        else changeBackground();
 }
-setInterval(function(){changeBackground()}, 10000);
+
+var timer = setInterval(function(){ changeBackground() }, 1000);
 
